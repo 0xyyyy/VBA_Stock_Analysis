@@ -16,7 +16,7 @@ For Each ws In Worksheets
     lastrow = ws.Cells(Rows.Count, 1).End(xlUp).Row
     Output_row = 2
         For i = 2 To lastrow
-        YearOp = Cells(2, 6)
+        YearOp = Cells(2, 3)
             If ws.Cells(i, 1) <> ws.Cells(i + 1, 1) Then
                 If YearOp <> 0 Then
                     YearCl = ws.Cells(i, 6)
@@ -33,7 +33,7 @@ For Each ws In Worksheets
                             Range("J" & Output_row).Interior.ColorIndex = 3
                         End If
                 End If
-                YearOp = ws.Cells(i + 1, 6)
+                YearOp = ws.Cells(i + 1, 3)
                 Ticker = Cells(i, 1).Value
                 VolumeTotal = VolumeTotal + Cells(i, 7).Value
                 Range("H" & Output_row) = Ticker
